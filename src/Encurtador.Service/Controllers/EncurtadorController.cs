@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Encurtador.Service.Filters;
 using Encurtador.Service.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -28,6 +29,7 @@ namespace Encurtador.Service.Controllers
             }
         }
         [HttpPost]
+        [ApiKeyAuth]
         public async Task<IActionResult> Post(string original)
         {
             try
